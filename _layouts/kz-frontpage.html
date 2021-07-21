@@ -20,7 +20,7 @@ format: frontpage
 {% capture url %}{% endcapture %}
 {% endif %}
 {% if page.callforaction %}
-    <div class="row t60 b60">
+    <div class="row t30 b30">
         <div class="small-12 text-center columns">
             <a class="button large radius {{ page.callforaction.style }}" href="{{ page.callforaction.url }}"{% if page.callforaction.url contains 'http' %} {% endif %}>{{ page.callforaction.text }}</a>
         </div><!-- /.small-12.columns -->
@@ -28,24 +28,7 @@ format: frontpage
 {% endif %}
 
 
-{% comment %}
-*
-* First check, if widget is empty or not by checking if there is a title
-*
-{% endcomment %}
-<div class="row t60">
-	{% if page.widget1.image or page.widget1.video or page.widget1.title %}
-		{% include _frontpage-widget.html widget=page.widget1 %}
-	{% endif %}
-
-	{% if page.widget2.image or page.widget2.video or page.widget2.title %}
-		{% include _frontpage-widget.html widget=page.widget2 %}
-	{% endif %}
-
-	{% if page.widget3.image or page.widget3.video or page.widget3.title %}
-		{% include _frontpage-widget.html widget=page.widget3 %}
-	{% endif %}
-</div><!-- /.row -->
+{% include _widget_grid_layout.html widgets=page.widgets articles_per_row=3 %}
 
 
 {% comment %}
@@ -91,13 +74,13 @@ format: frontpage
 
         <!-- List of earlier pages -->
         <div class="medium-6 columns">
+            <h3 style="margin-top: 0px;">Recently published:</h3>
             <ul class="side-nav">
-                {% for post in site.posts limit:10 %}
+                {% for post in site.posts limit:7 %}
                     {% unless post.primary_post == true %}
                       <li><a href="{{ post.url }}">{{ post.date | date: "%Y-%m-%d" }} &middot; <strong>{{ post.title }}</strong></a></li>
                     {% endunless %}
                 {% endfor %}
-
                 <!-- Link to the archive -->
                 <li class="text-right"><a href="/archive/"><strong>{{ site.data.language.to_archive }}</strong></a></li>
             </ul>
