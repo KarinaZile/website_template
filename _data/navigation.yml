@@ -1,14 +1,14 @@
 #
 #   Navigation to the left › side: left
 #
-- title: "Logo"
-  url: "/"
-  logo: true
-  side: left
+# - title: "Logo"
+#   url: "/"
+#   logo: true
+#   side: left
 
-- title: "About"
-  url: "/about/"
-  side: left
+# - title: "About"
+#   url: "/about/"
+#   side: left
 
 # - title: "Projects"
 #   url: "/projects/"

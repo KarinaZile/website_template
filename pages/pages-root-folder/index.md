@@ -1,5 +1,6 @@
 ---
 layout: kz-frontpage
+skip_boilerplate: true
 header:
   title: ""
   image_fullwidth: main.jpg
@@ -27,6 +28,7 @@ callforaction:
   style: alert
 permalink: /index.html
 homepage: true
+
 ---
 
 Some importan text here...
